@@ -1,0 +1,32 @@
+[
+  {
+    "table": "mandates",
+    "field": "elder",
+    "target": "elders",
+    "nullable": false
+  },
+  {
+    "table": "trusts",
+    "field": "elder",
+    "target": "elders",
+    "nullable": false
+  },
+  {
+    "table": "serviceDrafts",
+    "field": "elder",
+    "target": "elders",
+    "nullable": false
+  },
+  {
+    "table": "serviceDrafts",
+    "field": "provider",
+    "target": "providers",
+    "nullable": false
+  },
+  {
+    "table": "evidence",
+    "field": "elder",
+    "target": "elders",
+    "nullable": false
+  }
+]

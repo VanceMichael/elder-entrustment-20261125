@@ -1,0 +1,14 @@
+{
+  "name": "受托付款机构",
+  "path": "/trust/draws",
+  "lookup": "/trust/draws/",
+  "id": "drawNo",
+  "group": "draws",
+  "key": "X-Draw-Key",
+  "modes": [
+    "accepted",
+    "rejected",
+    "accepted_disconnect",
+    "pending"
+  ]
+}

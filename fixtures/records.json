@@ -1,0 +1,143 @@
+{
+  "elders": [
+    {
+      "id": "EL-1",
+      "name": "合成老人甲"
+    }
+  ],
+  "mandates": [
+    {
+      "id": "MD-1",
+      "elder": "EL-1",
+      "principal": "elder-1",
+      "primary": "agent-a",
+      "backup": "agent-b",
+      "scopes": [
+        "daily-care",
+        "escort"
+      ],
+      "validFrom": "2026-11-01",
+      "until": "2027-01-31"
+    }
+  ],
+  "trusts": [
+    {
+      "id": "TR-1",
+      "elder": "EL-1",
+      "monthlyMinor": 200000,
+      "purposes": [
+        "daily-care"
+      ],
+      "forbiddenPayees": [
+        "agent-a",
+        "agent-b"
+      ]
+    }
+  ],
+  "providers": [
+    {
+      "id": "SP-1",
+      "services": [
+        "daily-care"
+      ]
+    },
+    {
+      "id": "SP-2",
+      "services": [
+        "daily-care",
+        "escort"
+      ]
+    }
+  ],
+  "serviceDrafts": [
+    {
+      "id": "SV-1",
+      "elder": "EL-1",
+      "provider": "SP-1",
+      "purpose": "daily-care",
+      "start": "2026-11-28",
+      "end": "2026-12-03",
+      "dailyMinor": 5000
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-1",
+      "elder": "EL-1",
+      "kind": "activation-request",
+      "submittedBy": "agent-a"
+    },
+    {
+      "id": "EV-2",
+      "elder": "EL-1",
+      "kind": "capacity-conflict",
+      "submittedBy": "elder-1"
+    }
+  ],
+  "actors": [
+    {
+      "id": "elder-1",
+      "role": "principal",
+      "elder": "EL-1"
+    },
+    {
+      "id": "agent-a",
+      "role": "agent"
+    },
+    {
+      "id": "agent-b",
+      "role": "agent"
+    },
+    {
+      "id": "witness",
+      "role": "witness"
+    },
+    {
+      "id": "supervisor",
+      "role": "supervisor"
+    },
+    {
+      "id": "trustee",
+      "role": "trustee"
+    }
+  ],
+  "sourceChanges": [
+    {
+      "id": "BACKUP-REQUEST",
+      "elder": "EL-1",
+      "outgoing": "agent-a",
+      "incoming": "agent-b",
+      "reason": "原代理不能继续履职"
+    },
+    {
+      "id": "DELIVERY-1",
+      "service": "SV-1",
+      "date": "2026-11-28",
+      "amountMinor": 5000,
+      "provider": "SP-1"
+    },
+    {
+      "id": "DELIVERY-2",
+      "service": "SV-1",
+      "date": "2026-11-29",
+      "amountMinor": 5000,
+      "provider": "SP-1"
+    },
+    {
+      "id": "PAUSE-1",
+      "elder": "EL-1",
+      "scope": "SP-1",
+      "reason": "交付证明争议",
+      "actor": "supervisor"
+    },
+    {
+      "id": "REPLACE-SERVICE",
+      "elder": "EL-1",
+      "provider": "SP-2",
+      "purpose": "daily-care",
+      "start": "2026-11-30",
+      "end": "2026-12-03",
+      "dailyMinor": 6000
+    }
+  ]
+}

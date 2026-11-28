@@ -1,14 +1,16 @@
 {
   "name": "elder-entrustment",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": {
     "node": "22.23.4"
   },
   "scripts": {
+    "start": "node src/main.mjs",
     "start:partner": "node support/peer.mjs",
-    "build": "node --check support/peer.mjs && node --check tests/partner.test.mjs",
+    "scenario": "node scripts/scenario.mjs",
+    "build": "for f in src/*.mjs support/peer.mjs scripts/scenario.mjs tests/*.test.mjs; do node --check \"$f\" || exit 1; done",
     "test": "node --test tests/*.test.mjs"
   }
 }
